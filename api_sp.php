@@ -3,9 +3,20 @@
     try {
         $lat = $_GET['lat'];
         $lon = $_GET['lon'];
+        $radius = $_GET['radius'];
+        $limit = $_GET['limit'];
+        $cat_id = $_GET['cat_id'];
 
-        if (!isset($lat) || !isset($lon)) {
-            echo json_encode(['error' => 'Enter location']);
+        if (!isset($lat) || !isset($lon) || !isset($radius)) {
+            echo json_encode(['error' => 'Enter location, Radius']);
+        }
+        
+        if (!isset($limit)) {
+            $limit = 10;
+        }
+        
+        if (!isset($cat_id)) {
+            $cat_id = "NULL";
         }
 
         $pdo = new PDO("mysql:host=localhost;dbname=dbName", "username", "pass");
