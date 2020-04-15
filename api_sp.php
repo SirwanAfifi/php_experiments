@@ -21,7 +21,7 @@
 
         $pdo = new PDO("mysql:host=localhost;dbname=dbName", "username", "pass");
 
-        $statement = $pdo->prepare("CALL `spName`({$lat}, {$lon});");
+        $statement = $pdo->prepare("CALL Get_Locations({$lat}, {$lon}, {$radius}, {$limit}, {$cat_id});");
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $json = json_encode($results);
