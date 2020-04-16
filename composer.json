@@ -1,0 +1,12 @@
+{
+    "name": "sirwan/php_experiments",
+    "authors": [
+        {
+            "name": "sirwan",
+            "email": "sir1afifi@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^4.1"
+    }
+}
